@@ -11,7 +11,13 @@ Cada documento responde tres preguntas: qué se construyó, qué decisiones lo s
 
 Sin cifras de negocio, sin resultados financieros, sin credenciales, sin datos de clientes. Donde una decisión dependía de información que no me corresponde publicar, está descrita por su forma y no por su contenido.
 
-Puedo recorrer el código y la arquitectura completa en una entrevista.
+## Código que acompaña estas notas
+
+Una de las decisiones del primer caso está publicada como implementación ejecutable, no solo descrita:
+
+**[multi-tenant-rls](https://github.com/LukyPlay/multi-tenant-rls)** — el aislamiento entre clientes con Row Level Security, en ~200 líneas de SQL y TypeScript, con 16 pruebas en su mayoría negativas y una verificación por mutación que comprueba que la suite detecta su propio fallo. Se corre en dos minutos.
+
+Puedo recorrer el resto del código y la arquitectura completa en una entrevista.
 
 **Joshua Angulo González** — Software Engineer · Culiacán, Sinaloa, México
 [linkedin.com/in/joshuaangulogonzalez](https://www.linkedin.com/in/joshuaangulogonzalez/) · [joshuaangulo10@gmail.com](mailto:joshuaangulo10@gmail.com)

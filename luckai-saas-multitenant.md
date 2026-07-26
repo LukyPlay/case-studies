@@ -28,6 +28,8 @@ Un SaaS multi-tenant que filtra por `tenantId` en el código tiene tantos puntos
 
 La lección llegó por una auditoría, no por un incidente: las membresías en estado `suspended` e `invited` conservaban lectura directa. Ningún endpoint estaba mal escrito; la fuga estaba en la política. Desde entonces cada cambio de permisos entra con su prueba de regresión sobre RLS, porque un bug de aislamiento no se ve leyendo el controlador.
 
+> El patrón está publicado, aislado y ejecutable en **[multi-tenant-rls](https://github.com/LukyPlay/multi-tenant-rls)**: 16 pruebas en su mayoría negativas, más una verificación por mutación que comprueba que la suite detecta su propio fallo.
+
 ### Los efectos externos son idempotentes por contrato
 
 Stripe y WhatsApp Business reenvían webhooks. Un reintento no puede cobrar dos veces ni duplicar un mensaje, así que cada efecto externo se ejecuta bajo clave de idempotencia, con locks distribuidos en Redis para las secciones que no pueden solaparse entre instancias. La regla operativa que se sigue de ahí: ante la duda, el sistema falla cerrado — prefiere no actuar a actuar dos veces.
