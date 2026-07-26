@@ -15,7 +15,7 @@ Sin cifras de negocio, sin resultados financieros, sin credenciales, sin datos d
 
 Una de las decisiones del primer caso está publicada como implementación ejecutable, no solo descrita:
 
-**[multi-tenant-rls](https://github.com/LukyPlay/multi-tenant-rls)** — el aislamiento entre clientes con Row Level Security, en ~200 líneas de SQL y TypeScript, con 16 pruebas en su mayoría negativas y una verificación por mutación que comprueba que la suite detecta su propio fallo. Se corre en dos minutos.
+**[multi-tenant-rls](https://github.com/joshua-angulo/multi-tenant-rls)** — el aislamiento entre clientes con Row Level Security, en ~200 líneas de SQL y TypeScript, con 16 pruebas en su mayoría negativas y una verificación por mutación que comprueba que la suite detecta su propio fallo. Se corre en dos minutos.
 
 Puedo recorrer el resto del código y la arquitectura completa en una entrevista.
 

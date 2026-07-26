@@ -28,7 +28,7 @@ Un SaaS multi-tenant que filtra por `tenantId` en el código tiene tantos puntos
 
 La lección llegó por una auditoría, no por un incidente: las membresías en estado `suspended` e `invited` conservaban lectura directa. Ningún endpoint estaba mal escrito; la fuga estaba en la política. Desde entonces cada cambio de permisos entra con su prueba de regresión sobre RLS, porque un bug de aislamiento no se ve leyendo el controlador.
 
-> El patrón está publicado, aislado y ejecutable en **[multi-tenant-rls](https://github.com/LukyPlay/multi-tenant-rls)**: 16 pruebas en su mayoría negativas, más una verificación por mutación que comprueba que la suite detecta su propio fallo.
+> El patrón está publicado, aislado y ejecutable en **[multi-tenant-rls](https://github.com/joshua-angulo/multi-tenant-rls)**: 16 pruebas en su mayoría negativas, más una verificación por mutación que comprueba que la suite detecta su propio fallo.
 
 ### Los efectos externos son idempotentes por contrato
 
