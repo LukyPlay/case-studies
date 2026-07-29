@@ -1,8 +1,8 @@
-# LuckAI — plataforma SaaS multi-tenant de agentes de IA
+# LuckAgents — plataforma SaaS multi-tenant de agentes de IA
 
-**Rol:** diseño, implementación y operación · **Periodo:** 2025 – presente · **Código:** privado
+**Rol:** diseño e implementación · **Periodo:** 2025 – presente · **Código:** privado
 
-Monorepo pnpm + Turborepo con 10 workspaces y 524 commits. Un portal público en Next.js, un dashboard de operación en React/Vite, una API en Express con 42 módulos de rutas y un runtime de agentes que corre en contenedores, sobre PostgreSQL/Supabase, MongoDB y Redis.
+Monorepo pnpm + Turborepo con 10 workspaces. Un portal público en Next.js, un dashboard de operación en React/Vite, una API en Express con 42 módulos de rutas y un runtime de agentes que corre en contenedores, sobre PostgreSQL/Supabase, MongoDB y Redis.
 
 ```mermaid
 flowchart LR
@@ -32,7 +32,7 @@ La lección llegó por una auditoría, no por un incidente: las membresías en e
 
 ### Los efectos externos son idempotentes por contrato
 
-Stripe y WhatsApp Business reenvían webhooks. Un reintento no puede cobrar dos veces ni duplicar un mensaje, así que cada efecto externo se ejecuta bajo clave de idempotencia, con locks distribuidos en Redis para las secciones que no pueden solaparse entre instancias. La regla operativa que se sigue de ahí: ante la duda, el sistema falla cerrado — prefiere no actuar a actuar dos veces.
+Stripe y WhatsApp Business pueden reenviar webhooks. Para reducir el riesgo de cobros o mensajes duplicados, cada efecto externo se ejecuta bajo clave de idempotencia, con locks distribuidos en Redis para las secciones que no pueden solaparse entre instancias. La regla operativa que se sigue de ahí: ante la duda, el sistema falla cerrado — prefiere no actuar a actuar dos veces.
 
 ### SSE para el streaming de agentes
 
@@ -73,4 +73,4 @@ Publico esto porque separar "mi suite pasa" de "esto se puede operar" es la part
 
 ---
 
-**In English.** LuckAI is a multi-tenant AI-agent SaaS: a pnpm/Turborepo monorepo with 10 workspaces, an Express API, a React/Vite dashboard, a Next.js portal and a containerized agent runtime on PostgreSQL/Supabase, MongoDB and Redis. Tenant isolation is enforced in the database through 31 RLS policies rather than in controllers; external side effects are idempotent by contract; secrets never reach the repository, guarded by a fail-closed pre-commit scan. A July 2026 modernization audit took 155 vulnerable production dependency paths to zero and left 1,066 automated tests passing — and still returned a **NO-GO for production**, because external infrastructure gates remained unverified. That distinction between "my suite is green" and "this can be operated" is the reason the case study exists.
+**In English.** LuckAgents is a multi-tenant AI-agent SaaS: a pnpm/Turborepo monorepo with 10 workspaces, an Express API, a React/Vite dashboard, a Next.js portal and a containerized agent runtime on PostgreSQL/Supabase, MongoDB and Redis. Tenant isolation is enforced in the database through 31 RLS policies rather than in controllers; external side effects are idempotent by contract; secrets never reach the repository, guarded by a fail-closed pre-commit scan. A July 2026 modernization audit took 155 vulnerable production dependency paths to zero and left 1,066 automated tests passing — and still returned a **NO-GO for production**, because external infrastructure gates remained unverified. That distinction between "my suite is green" and "this can be operated" is the reason the case study exists.
