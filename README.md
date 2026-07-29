@@ -6,7 +6,7 @@ Cada documento responde tres preguntas: qué se construyó, qué decisiones lo s
 
 | Caso | Stack | Qué muestra |
 |---|---|---|
-| [LuckAI — SaaS multi-tenant de agentes de IA](luckai-saas-multitenant.md) | TypeScript · Node/Express · React · Next.js · PostgreSQL/Supabase · MongoDB · Redis · Docker | Aislamiento entre clientes en la base de datos, idempotencia en efectos externos, y una auditoría que terminó en NO-GO para producción con la suite en verde |
+| [LuckAgents — SaaS multi-tenant de agentes de IA](luckai-saas-multitenant.md) | TypeScript · Node/Express · React · Next.js · PostgreSQL/Supabase · MongoDB · Redis · Docker | Aislamiento entre clientes en la base de datos, idempotencia en efectos externos, y una auditoría que terminó en NO-GO para producción con la suite en verde |
 | [Plataforma cuantitativa para mercados electrónicos](plataforma-cuantitativa.md) | Rust (Tokio) · Python · Polars · DuckDB · Parquet · XGBoost/CatBoost/LightGBM | Aritmética decimal en rutas de dinero, paridad Python↔Rust como contrato, y controles de validación que se prueban fallando |
 
 Sin cifras de negocio, sin resultados financieros, sin credenciales, sin datos de clientes. Donde una decisión dependía de información que no me corresponde publicar, está descrita por su forma y no por su contenido.
